@@ -6,8 +6,6 @@ public class SetScoreHistory {
 	private Integer initialPlayer2SetScore;
 	private Integer finalPlayer1SetScore;
 	private Integer finalPlayer2SetScore;
-	//private Integer player1TieBreakScore;
-	//private Integer player2TieBreakScore;
 	
 	public SetScoreHistory(Game game,Integer  initialPlayer1SetScore, Integer initialPlayer2SetScore){
 		this.game = game;
