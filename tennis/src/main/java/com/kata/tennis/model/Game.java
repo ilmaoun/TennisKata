@@ -33,6 +33,13 @@ public class Game {
 			return;
 		}
 		player1Counter = player1Counter.getNext();
+		if(player1Counter.isAdvNode())
+			player2Counter = player2Counter.getPrevious();
+		if(player1Counter.isDeuceNode())
+			if(player2Counter.isAdvNode())
+				player2Counter = player2Counter.getPrevious();
+			else
+				player1Counter = player1Counter.getNext();
 		GameScoreHistory newScoreEntry = new GameScoreHistory(player1Counter.getValue(),player2Counter.getValue());
 		scoreHistory.add(newScoreEntry);
 	}
@@ -45,6 +52,13 @@ public class Game {
 			return;
 		}
 		player2Counter = player2Counter.getNext();
+		if(player2Counter.isAdvNode())
+			player1Counter = player1Counter.getPrevious();
+		if(player2Counter.isDeuceNode())
+			if(player1Counter.isAdvNode())
+				player1Counter = player1Counter.getPrevious();
+			else
+				player2Counter = player2Counter.getNext();
 		GameScoreHistory newScoreEntry = new GameScoreHistory(player1Counter.getValue(),player2Counter.getValue());
 		scoreHistory.add(newScoreEntry);
 	}
