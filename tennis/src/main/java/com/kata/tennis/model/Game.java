@@ -63,6 +63,16 @@ public class Game {
 		scoreHistory.add(newScoreEntry);
 	}
 
+	public Player getWinner() {
+		return winner;
+	}
+	
+	
+
+	public List<GameScoreHistory> getScoreHistory() {
+		return scoreHistory;
+	}
+
 	public String showScore() {
 		// TODO Auto-generated method stub
 		String player1Score = StringUtils.rightPad(player1.getName(), 15);
